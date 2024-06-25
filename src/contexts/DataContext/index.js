@@ -19,9 +19,11 @@ export const api = {
 export const DataProvider = ({ children }) => {
   const [error, setError] = useState(null);
   const [data, setData] = useState(null);
+
   const getData = useCallback(async () => {
     try {
-      setData(await api.loadData());
+      const loadedData = await api.loadData();
+      setData(loadedData);
     } catch (err) {
       setError(err);
     }
@@ -29,7 +31,7 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     if (data) return;
     getData();
-  });
+  },[data, getData]);
   
   return (
     <DataContext.Provider

@@ -1,9 +1,10 @@
-import { fireEvent, render, screen } from "@testing-library/react";
-import Form from "./index";
+import { render, fireEvent, screen } from '@testing-library/react';
+import Form from './index';
 
 describe("When Events is created", () => {
   it("a list of event card is displayed", async () => {
-    render(<Form />);
+    const onError = jest.fn();
+    render(<Form onError={onError}/>);
     await screen.findByText("Email");
     await screen.findByText("Nom");
     await screen.findByText("Prénom");
@@ -27,3 +28,5 @@ describe("When Events is created", () => {
     });
   });
 });
+
+
