@@ -122,7 +122,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-  
+
         {last &&(
           <EventCard
           imageSrc={last?.cover}
