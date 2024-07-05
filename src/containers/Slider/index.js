@@ -13,7 +13,6 @@ const Slider = () => {
   useEffect(() => {
     
     const timer = setTimeout(
-      // Vérification que l'index ne dépasse pas la longueur du tableau - 1
       () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
       5000
     );

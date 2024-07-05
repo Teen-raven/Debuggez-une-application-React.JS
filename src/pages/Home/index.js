@@ -15,13 +15,10 @@ import { useData } from "../../contexts/DataContext";
 const Page = () => {
 
   const { data } = useData();
-  // const qui vient chercher la dernière prestation
-  const last =
-    data && data.events && data.events.length > 0
-      ? 
-        data.events[data.events.length - 1] 
-      : 
-        null;
+
+  const last = data?.events?.sort((evtA, evtB) =>
+    new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
+  )[0];
 
   return <>
     <header>

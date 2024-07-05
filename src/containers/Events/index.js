@@ -26,8 +26,7 @@ const EventList = () => {
 }
 const pageNumber = Math.ceil((filteredEvents.length || 0) / PER_PAGE);
 const typeList = [
-  "Toutes",
-  ...new Set(
+    ...new Set(
     data?.events
       .map((event) => event.type)
       .filter((eventType) => eventType !== "Toutes")

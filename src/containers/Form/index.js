@@ -8,18 +8,18 @@ const mockContactApi = () =>
   new Promise((resolve) => {
     setTimeout(resolve, 500);
   });
-/*    ERRURR onSuccess on doit caller  */ 
+
 const Form = ({ onSuccess, onError }) => {
   const [sending, setSending] = useState(false);
   const sendContact = useCallback(
     async (evt) => {
       evt.preventDefault();
       setSending(true);
-      // We try to call mockContactApi
+
       try {
         await mockContactApi();
         setSending(false);
-        //  afficher la confirmation du message envoyé,on doit ajout de onSucces 
+
         onSuccess();
       } catch (err) {
         setSending(false);
