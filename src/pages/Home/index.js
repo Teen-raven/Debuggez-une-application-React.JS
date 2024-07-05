@@ -122,8 +122,7 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        {/* Ajout de "last &&" pour verifié que le composent existe 
-        changement du label boom > last?.type */}
+  
         {last &&(
           <EventCard
           imageSrc={last?.cover}
